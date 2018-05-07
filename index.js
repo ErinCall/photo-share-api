@@ -1,20 +1,11 @@
 'use strict';
 
+const fs = require('fs')
 const {GraphQLServer} = require('graphql-yoga');
+const resolvers = require('./resolvers');
 
-const typeDefs = `
-  type Query {
-    lunch: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    lunch: () => 'just a little bit ago'
-  }
-};
-
+const typeDefs = fs.readFileSync('./typeDefs.graphql', 'UTF-8');
 const server = new GraphQLServer({typeDefs, resolvers});
-server.start(
-  () => console.log('Service running on port 4k')
-);
+
+
+server.start(() => console.log('Service running on port 4k'));
