@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = {
-  lunch: () => 'just a little bit ago'
+  totalPhotos: (root, args, {photos}) => photos.length,
+  allPhotos: (root, args, {photos}) => photos
 };
