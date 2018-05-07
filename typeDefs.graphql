@@ -1,3 +1,8 @@
+type User {
+    id: ID!
+    name: String!
+}
+
 type Photo {
     id: ID!
     name: String!
@@ -22,8 +27,14 @@ input PostPhotoInput {
 type Query {
     totalPhotos: Int!
     allPhotos: [Photo!]!
+    Photo(id: ID!): Photo
+
+    totalUsers: Int!
+    allUsers: [User!]!
+    User(id: ID!): User!
 }
 
 type Mutation {
     postPhoto(input: PostPhotoInput!): Photo!
+    addUser(name: String!): User!
 }
