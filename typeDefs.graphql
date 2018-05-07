@@ -1,6 +1,7 @@
 type User {
     id: ID!
     name: String!
+    postedPhotos: [Photo!]!
 }
 
 type Photo {
@@ -9,6 +10,7 @@ type Photo {
     description: String
     url: String!
     category: PhotoCategory!
+    postedBy: User!
 }
 
 enum PhotoCategory {

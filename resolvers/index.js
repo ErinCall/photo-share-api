@@ -1,11 +1,13 @@
 'use strict';
 
-const Query = require('./query');
 const Mutation = require('./mutation');
 const Photo = require('./photo');
+const Query = require('./query');
+const User = require('./user');
 
 module.exports = {
   Mutation,
   Photo,
-  Query
+  Query,
+  User
 };

@@ -3,9 +3,12 @@
 const fs = require('fs')
 const {GraphQLServer} = require('graphql-yoga');
 const resolvers = require('./resolvers');
+const photos = require('./data/photos.json');
+const users = require('./data/users.json');
 const context = {
-  photos: require('./data/photos.json'),
-  users: require('./data/users.json')
+  photos,
+  users,
+  user: users['a']
 }
 
 const typeDefs = fs.readFileSync('./typeDefs.graphql', 'UTF-8');

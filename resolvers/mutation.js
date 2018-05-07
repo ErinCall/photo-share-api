@@ -2,9 +2,10 @@
 
 const {v4} = require('uuid');
 
-const postPhoto = (root, {input}, {photos}) => {
+const postPhoto = (root, {input}, {photos, user}) => {
   const photo = {
     id: v4(),
+    userID: user.id,
     ...input
   };
   photos.push(photo);
